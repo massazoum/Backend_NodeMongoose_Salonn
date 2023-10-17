@@ -14,10 +14,10 @@ app.use(express.json());
 const programmetemps =require('./models/programe')
 
 app.get('/',(req,res) => {
- res.send('Salut tous le monde')
+ res.send("Salut à tous ici c'est zoumtech ")
 })
 
-// Base de données connecté à mon backend
+// Base de données connecté au node.js et express.js backend
 
 mongoose.connect('mongodb+srv://zoumaniguimassa12:Massazoumtech2000@zoumdatabase.knklhdw.mongodb.net/zoum?retryWrites=true&w=majority')
 .then(()=> 
@@ -44,7 +44,7 @@ app.post('/reservations', (req, res) => {
    });
 });
 
-// Get all reservations
+// recupere toutes les reservations
 
 app.get('/reservations', (req, res) => {
  programmetemps
@@ -57,7 +57,7 @@ app.get('/reservations', (req, res) => {
    });
 });
 
-// Update a reservation by ID
+// mettre à jour la reservation par ID
 app.put('/reservations/:id', (req, res) => {
  programmetemps
    .findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -69,7 +69,7 @@ app.put('/reservations/:id', (req, res) => {
    });
 });
 
-// Delete a reservation by ID
+// supprimer une reservation par ID
 app.delete('/reservations/:id', (req, res) => {
  programmetemps
    .findByIdAndRemove(req.params.id)
